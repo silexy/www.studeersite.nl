@@ -1,0 +1,1053 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <title>studeersite - zinnen oplezen</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" /> -->
+    <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.9.0.custom.min.css" />
+  <link rel="stylesheet" href="css/default-jquery-layout.css" />
+  <link rel="stylesheet" href="css/jplayer.css" />
+  <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+  <script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+  <script src="js/jquery.layout-latest.js"></script>
+  <!--  ui.draggable.js en ui.effects.js meenemen voor evt sliding animatie of resize animatie-->
+  <!-- Cookies-->
+  <script type="text/javascript">
+      window.cookieconsent_options = {"message":"Op studeersite maken we gebruik van cookies voor webstatistieken, advertenties en het delen via social media.","dismiss":"Ok","learnMore":"","link":null,"theme":"dark-bottom"};
+  </script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+  <!-- End Cookie Consent plugin -->    
+  <style type="text/css">
+  body{
+    font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+    }
+    </style>
+    <script>
+    $(document).ready(function () {
+    var myLayout = $('body').layout({                           
+              closable:          false  
+            ,  resizable:        false  
+            ,  slidable:         false  
+            ,  north__size:      150
+            ,  west__size:       250
+            ,  south__size:      40
+            ,  east__size:       200    
+            ,  west__showOverflowOnHover:  true
+            ,  west__closable:             true  
+            ,  west__resizable:             true                      
+            ,  west__togglerLength_open:    20
+            ,  west__togglerTip_closed:          "Menu"
+            ,  west__togglerAlign_open:           "bottom" 
+            ,  west__togglerAlign_closed:         "bottom" 
+             });
+    $(function() {
+        $( "input[type=submit]" )
+            .button()
+            .click(function( event ) {
+              event.preventDefault();
+            });
+    });			 
+    function makeMenu() {    
+    $( "#leftmenu" ).menu({
+            select: function( event, ui ) {
+                var link = ui.item.children( "a:first" );
+                if ( link.attr( "target" ) || event.metaKey || event.shiftKey || event.ctrlKey ) {
+                    return;
+                }
+        location.href = link.attr( "href" );
+            }
+        });
+    }
+    $( '[title]' ).tooltip({
+            show: {
+                effect: "slideDown",
+                delay: 250,
+        my: "right borrom",
+        at: "right bottom"
+        //collision:  "none",
+            }
+      }); 
+    $( "#west").load("menu.html", makeMenu);	  
+   });
+   </script>
+   <script>
+   function loadText() {
+    var string="";
+    var i;
+	var zinArray = new Array();
+	zinArray[1]="Aan het eind van de maand is mijn geld altijd op.";
+	zinArray[2]="Achter de wolken schijnt de zon.";
+	zinArray[3]="Achter deze zin komt een punt.";
+	zinArray[4]="Aisha wast haar baby.";
+	zinArray[5]="Ali mag met zijn vader mee naar Schiphol.";
+	zinArray[6]="Ali viel in slaap, hij was erg moe.";
+	zinArray[7]="Alle wegen leiden naar Rome.";
+	zinArray[8]="Als iets ingewikkeld is dan is het moeilijk.";
+	zinArray[9]="Als ik ga winkelen koop ik vaak schoenen.";
+	zinArray[10]="Als ik op reis ga neem ik mijn koffer mee"; 
+	zinArray[11]="Als je niet opschiet zul je te laat zijn.";
+	zinArray[12]="Als kind wilde ik altijd naar het strand gaan.";
+	zinArray[13]="Als ze tenminste op tijd zijn.";
+	zinArray[14]="Amerika voetbalt vanavond tegen Marokko.";
+	zinArray[15]="Anders nog iets ?";
+	zinArray[16]="Bemoei je er niet mee.";
+	zinArray[17]="Bemoei je met je eigen zaken!";
+	zinArray[18]="Ben je bang voor die grote hond?";
+	zinArray[19]="Ben je getrouwd? Beter een half ei dan een lege dop.";
+	zinArray[20]="Bij dat ongeluk is hij aan de dood ontsnapt.";
+	zinArray[21]="Bij de gemeente kun je je paspoort ophalen.";
+	zinArray[22]="Bij de supermarkt kan je van alles krijgen.";
+	zinArray[23]="Bij uitzondering hebben we vandaag geen huiswerk.";
+	zinArray[24]="Binnen een uur waren we klaar met de repetitie.";
+	zinArray[25]="Blijf op je plaats zitten.";
+	zinArray[26]="Chinees is moeilijker dan Nederlands.";
+	zinArray[27]="Daar heb ik nog nooit van gehoord.";
+	zinArray[28]="Daar kopen we vis en vlees.";
+	zinArray[29]="Daar krijg je betere kwaliteit en tegen een goede prijs.";
+	zinArray[30]="Daar kun je naar fluiten.";
+	zinArray[31]="Daar was een hoge heg tussen mijn huis en de tuin.";
+	zinArray[32]="Dan hoort hij de stem van zijn vriend achter zich.";
+	zinArray[33]="Dat doet de deur dicht!";
+	zinArray[34]="Dat gaat per ongeluk.";
+	zinArray[35]="Dat grapje loopt uit de hand.";
+	zinArray[36]="Dat is een mooi verhaal.";
+	zinArray[37]="Dat is heel wat sneller dan met de auto Dat is in orde.";
+	zinArray[38]="Dat is niet goed geregeld.";
+	zinArray[39]="Dat is toch niet mijn probleem.";
+	zinArray[40]="Dat kan bij het loket of bij de automaat.";
+	zinArray[41]="Dat kan iedereen wel zeggen.";
+	zinArray[42]="Dat kan wel kloppen.";
+	zinArray[43]="Dat komt goed uit.";
+	zinArray[44]="Dat komt voor elkaar.";
+	zinArray[45]="Dat kun je op je vingers natellen.";
+	zinArray[46]="Dat potlood is van hem.";
+	zinArray[47]="Dat schilderij herinnert mij aan vroeger.";
+	zinArray[48]="Dat stond in de krant van gisteren.";
+	zinArray[49]="Dat was een pijnlijke vergissing!";
+	zinArray[50]="De aardappels zijn op!";
+	zinArray[51]="De Amerikanen reizen naar de planeten.";
+	zinArray[52]="De appels zijn hard, ze zijn nog niet rijp.";
+	zinArray[53]="De bananen kosten 50 cent per stuk.";
+	zinArray[54]="De bel gaat om acht uur.";
+	zinArray[55]="De bloemetjes buiten zetten.";
+	zinArray[56]="De buren hebben een mooie auto.";
+	zinArray[57]="De chauffeur vraagt om in de bus niet te roken.";
+	zinArray[58]="De chirurg wist na de operatie niet wat hij moest zeggen.";
+	zinArray[59]="De dief ging de politie met een mes te lijf.";
+	zinArray[60]="De druppel die de emmer doet overlopen.";
+	zinArray[61]="De eend zwemt lekker in het water.";
+	zinArray[62]="De eerste klap is een daalder waard.";
+	zinArray[63]="De fabriek ontslaat een aantal arbeiders.";
+	zinArray[64]="De gemeenteraad noemen we het parlement.";
+	zinArray[65]="De hond is in een diep gat gevallen.";
+	zinArray[66]="De hond kan hard blaffen.";
+	zinArray[67]="De hond schrok van het vuurwerk.";
+	zinArray[68]="De huisarts heeft elke dag tot tien uur spreekuur.";
+	zinArray[69]="De inbreker steelt het geld uit de kluis.";
+	zinArray[70]="De jongen schopt de bal in het doel.";
+	zinArray[71]="De jongens gaan vanmiddag voetballen.";
+	zinArray[72]="De jongste kinderen zitten in groep 1.";
+	zinArray[73]="De kapper scheert zijn klanten.";
+	zinArray[74]="De kinderen hebben een schoolplein om op te spelen.";
+	zinArray[75]="De kinderen hebben vrij, ze hoeven niet naar school.";
+	zinArray[76]="De kinderen komen vanavond bij ons eten.";
+	zinArray[77]="De kinderen vinden sinaasappels lekker.";
+	zinArray[78]="De kinderen zingen een lied.";
+	zinArray[79]="De klok loopt goed.";
+	zinArray[80]="De koopman weegt de appels met een weegschaal.";
+	zinArray[81]="De krant geeft commentaar op het nieuws.";
+	zinArray[82]="De leerlingen barstten in lachen uit.";
+	zinArray[83]="De leerlingen blijven op deze scholen.";
+	zinArray[84]="De leerlingen lachen om de grap van de leraar.";
+	zinArray[85]="De leerlingen schuiven de stoelen onder de tafels.";
+	zinArray[86]="De leraar engels is vandaag niet op school.";
+	zinArray[87]="De leraar engels is vandaag niet op school, hij is ziek.";
+	zinArray[88]="De leraar geeft veel huiswerk.";
+	zinArray[89]="De lerares belooft op bezoek te komen.";
+	zinArray[90]="De lerares vergiste zich in mijn naam.";
+	zinArray[91]="De lift is buiten werking.";
+	zinArray[92]="De man heeft de supermarkt gesloten.";
+	zinArray[93]="De markt is alleen vandaag gesloten.";
+	zinArray[94]="Het meel voor het brood hebben we in de molen gemaakt.";
+	zinArray[95]="De meester denkt er nog over na.";
+	zinArray[96]="De meester komt om negen uur op school.";
+	zinArray[97]="De meester veegt het bord schoon.";
+	zinArray[98]="De mens bestaat voor 70% uit water.";
+	zinArray[99]="De mooi weilanden en vele dieren ik heb gezien.";
+	zinArray[100]="De muizen vreten van de kaas.";
+	zinArray[101]="De oude dame past op haar kleinkinderen.";
+	zinArray[102]="De politie brengt haar naar het ziekenhuis.";
+	zinArray[103]="De prijs van kool is hoger dan een week geleden.";
+	zinArray[104]="De puntjes op de I zetten.";
+	zinArray[105]="De regering heeft de uitkeringen verhoogd.";
+	zinArray[106]="De rijke man deed zich voor als een bedelaar.";
+	zinArray[107]="De ruzie gaat over een gum.";
+	zinArray[108]="De school begint altijd om 8 uur.";
+	zinArray[109]="De soldaten vechten tegen de vijand.";
+	zinArray[110]="De studenten zien tegen de professor op.";
+	zinArray[111]="De supermarkt is om de hoek.";
+	zinArray[112]="De tandarts heeft twee kiezen getrokken.";
+	zinArray[113]="De telefoon is in gesprek.";
+	zinArray[114]="De timmerman meet de lengte van de balk.";
+	zinArray[115]="De toetsen staan voor de deur.";
+	zinArray[116]="De trein naar Parijs vertrekt van perron 4 .";
+	zinArray[117]="De treinen rijden naar die steden.";
+	zinArray[118]="De tuinman graaft een kuil voor een nieuwe boom.";
+	zinArray[119]="De tuinman heeft de planten verplaatst.";
+	zinArray[120]="De vakantie is achter de rug.";
+	zinArray[121]="De verjaardag van Niels wordt altijd gevierd.";
+	zinArray[122]="De vogel blijft op een hoge tak zitten.";
+	zinArray[123]="De vogel is naar het zuiden gevlogen.";
+	zinArray[124]="De vogel vliegt door de lucht.";
+	zinArray[125]="De volgende keer beginnen we hier.";
+	zinArray[126]="De volgende keer betaal ik.";
+	zinArray[127]="De vrouw ruilt haar jurk in voor een andere.";
+	zinArray[128]="De zanger mag met een orkest optreden.";
+	zinArray[129]="De zon is te laat ondergegaan.";
+	zinArray[130]="Denk je aan je huiswerk?";
+	zinArray[131]="Deze broek staat me niet.";
+	zinArray[132]="Deze familie heeft twee huizen gerenoveerd.";
+	zinArray[133]="Deze korte broek past niet.";
+	zinArray[134]="Deze melk is niet goed meer.";
+	zinArray[135]="Deze rechthoek is vier bij vijf centimeter.";
+	zinArray[136]="Deze straat komt uit op het stationsplein.";
+	zinArray[137]="Die jongen is erg handig met naald en draad.";
+	zinArray[138]="Die jongens hebben ons bestolen.";
+	zinArray[139]="Die opmerking viel helemaal verkeerd.";
+	zinArray[140]="Die school is erg groot.";
+	zinArray[141]="Die vertrekt elk half uur vanuit Rotterdam.";
+	zinArray[142]="Die vind ik in de supermarkt veel te duur.";
+	zinArray[143]="Dieren vechten vaak met elkaar.";
+	zinArray[144]="Dit boek bestaat uit drie delen.";
+	zinArray[145]="Dit boek gaat over de geschiedenis van Amerika.";
+	zinArray[146]="Dit is twee euro teveel.";
+	zinArray[147]="Dit zijn eieren van onze kippen.";
+	zinArray[148]="Doe je het licht uit als je weggaat ?";
+	zinArray[149]="Doe jij de deur op slot als je straks vertrekt?";
+	zinArray[150]="Door de harde regen zijn veel planten beschadigd.";
+	zinArray[151]="Door deze straat kom je bij het station.";
+	zinArray[152]="Een ander huis zoeken is voor later zorg.";
+	zinArray[153]="Een auto rijdt een man aan.";
+	zinArray[154]="Een bromfiets rijdt snel maar een motor rijdt sneller.";
+	zinArray[155]="Een citroen is zuurder dan een sinaasappel.";
+	zinArray[156]="Een goed begin is het halve werk.";
+	zinArray[157]="Een jaar geleden waren er meer bomen en planten in het bos.";
+	zinArray[158]="Een papegaai houdt van nazeggen.";
+	zinArray[159]="Een zoon woont nog bij ons thuis.";
+	zinArray[160]="Eens even op de klok kijken.";
+	zinArray[161]="Eerlijk duurt het langst.";
+	zinArray[162]="Eigenlijk doe ik dat liever niet.";
+	zinArray[163]="Elk huisje heeft zijn kruisje.";
+	zinArray[164]="Elke plaats is makkelijk te bereiken.";
+	zinArray[165]="Els doet de tuin voor haar plezier.";
+	zinArray[166]="Er komt nog vijftien euro kosten bij.";
+	zinArray[167]="Er loopt een fluitende jongen in de gang.";
+	zinArray[168]="Er wonen veel mensen in mijn land.";
+	zinArray[169]="Er zijn hier drie of vier opleidingen.";
+	zinArray[170]="Fred moet deze week de boodschappen betalen.";
+	zinArray[171]="Ga je mee ?";
+	zinArray[172]="Ga je mee naar buiten?";
+	zinArray[173]="Ga je morgen mee naar het strand, het wordt lekker weer.";
+	zinArray[174]="Ga op je hurken zitten.";
+	zinArray[175]="Geen rozen zonder doornen.";
+	zinArray[176]="Gelukkig heb ik mijn portemonnee nog gevonden.";
+	zinArray[177]="Gezelligheid kent geen tijd.";
+	zinArray[178]="Gister regende het.";
+	zinArray[179]="Gisteren mocht de boer zijn heg niet snoeien.";
+	zinArray[180]="Haar lievelingskleur is donkerblauw.";
+	zinArray[181]="Haar vader heeft al 25 jaar hetzelfde beroep.";
+	zinArray[182]="Haar vader is boos op de kinderen.";
+	zinArray[183]="Hallo! Hoe gaat het met je ?";
+	zinArray[184]="Han wordt dokter in India.";
+	zinArray[185]="Hassan komt uit marokko.";
+	zinArray[186]="Heb je een pen bij je?";
+	zinArray[187]="Heb je het al gehoord ?";
+	zinArray[188]="Heb je je tong verloren?";
+	zinArray[189]="Heb je pillen tegen misselijkheid?";
+	zinArray[190]="Heb je veel geld over ?";
+	zinArray[191]="Heb jij dat gebouw zien afbranden?";
+	zinArray[192]="Heb jij mijn tas ergens zien staan ?";
+	zinArray[193]="Heb jij ook zo'n trek in een ijsje ?";
+	zinArray[194]="Heb jij toevallig geld bij je ?";
+	zinArray[195]="Hebben is hebben, krijgen is de kunst.";
+	zinArray[196]="Hebben jullie mijn sleutels gezien ?";
+	zinArray[197]="Heeft u terug van vijftig ?";
+	zinArray[198]="Heeft u terug van vijftig euro?";
+	zinArray[199]="Hein haalt suiker en snoepjes bij de supermarkt.";
+	zinArray[200]="Hein haalt suiker en snoepjes in de supermarkt.";
+	zinArray[201]="Henk zit steeds naar Tineke te gluren.";
+	zinArray[202]="Het boek gaat over een reus.";
+	zinArray[203]="Het boek is nog niet uit.";
+	zinArray[204]="Het energiebedrijf betaal ik per twee maanden.";
+	zinArray[205]="Het ergste is nu achter de rug.";
+	zinArray[206]="Het eten was verrukkelijk.";
+	zinArray[207]="Het fietsenhok is achter de school.";
+	zinArray[208]="Het gebeurde tien jaar geleden.";
+	zinArray[209]="Het geld komt op de rekening van het bedrijf.";
+	zinArray[210]="Het geld ligt op tafel.";
+	zinArray[211]="Het hagelde verleden winter.";
+	zinArray[212]="Het heeft vandaag hard geregend.";
+	zinArray[213]="Het ijs is gebroken.";
+	zinArray[214]="Het is erg belangrijk om Nederlands te leren.";
+	zinArray[215]="Het is erg koud in de winter.";
+	zinArray[216]="Het is hier benauwd.";
+	zinArray[217]="Het is maar hoe je het bekijkt.";
+	zinArray[218]="Het is maar hoe je het bekijkt.";
+	zinArray[219]="Het is niet helemaal gegaan zoals we (het?) verwacht hadden.";
+	zinArray[220]="Het is niet helemaal gegaan zoals we bedoeld hadden.";
+	zinArray[221]="Het is niet helemaal gegaan zoals we verwacht hadden.";
+	zinArray[222]="Het is niet waar wat je zegt!";
+	zinArray[223]="Het is opgehouden met regenen.";
+	zinArray[224]="Het kind kwam onder een auto.";
+	zinArray[225]="Het kind ligt op de grond te tekenen.";
+	zinArray[226]="Het kind ontmoette zijn vriendje bij de beek.";
+	zinArray[227]="Het kind zuigt de limonade door een rietje.";
+	zinArray[228]="Het meisje leeft gescheiden van haar ouders.";
+	zinArray[229]="Het meisje was trots op haar nieuwe schoenen.";
+	zinArray[230]="Het moet in december klaar zijn.";
+	zinArray[231]="het moet in januari klaar zijn.";
+	zinArray[232]="Het paard achter de wagen spannen.";
+	zinArray[233]="Het paard rende op het gras.";
+	zinArray[234]="Het pakje is zwaar, het weegt 5 kilo.";
+	zinArray[235]="Het schilderij hangt aan de muur.";
+	zinArray[236]="Het schilderij hangt in een museum.";
+	zinArray[237]="Het schrift is gevallen, het ligt op de grond.";
+	zinArray[238]="Het spijt me, dat is uitverkocht.";
+	zinArray[239]="Het spijt me, we zitten helemaal volgeboekt.";
+	zinArray[240]="Het stormde veel afgelopen najaar.";
+	zinArray[241]="Het vliegtuig kwam naast de baan terecht.";
+	zinArray[242]="Het vliegtuig landt op het vliegveld.";
+	zinArray[243]="Het vriest vannacht.";
+	zinArray[244]="Het waaide erg hard vanmorgen.";
+	zinArray[245]="Het zal me een worst wezen.";
+	zinArray[246]="Het zou fantastisch zijn als je mee gaat.";
+	zinArray[247]="Hier kan ik Ã©cht niet aan beginnen.";
+	zinArray[248]="Hier vult u uw persoonlijke gegevens in.";
+	zinArray[249]="Hij bidt vijf keer per dag.";
+	zinArray[250]="Hij danst de hele avond.";
+	zinArray[251]="Hij danste de hele avond.";
+	zinArray[252]="Hij gaat fietsend naar school.";
+	zinArray[253]="Hij gaat ieder weekend vissen.";
+	zinArray[254]="Hij geeft het boek terug aan zijn leraar.";
+	zinArray[255]="Hij gelooft zijn ogen niet.";
+	zinArray[256]="Hij had beter moeten weten.";
+	zinArray[257]="Hij had de hele avond gedanst.";
+	zinArray[258]="Hij heeft de hele avond gedanst.";
+	zinArray[259]="Hij heeft de hele zomer vakantie bij de zee doorgebracht.";
+	zinArray[260]="Hij heeft een brief zitten schrijven.";
+	zinArray[261]="Hij heeft geen trek in kaas .";
+	zinArray[262]="Hij heeft genoeg van die melk.";
+	zinArray[263]="Hij heeft in de zee gezwommen.";
+	zinArray[264]="Hij heeft mijn fiets geleend.";
+	zinArray[265]="Hij heeft trek in een broodje.";
+	zinArray[266]="Hij heeft verstand van tuinieren.";
+	zinArray[267]="Hij heeft weinig vrienden op school.";
+	zinArray[268]="Hij heeft zich nog nooit gebrand.";
+	zinArray[269]="Hij heeft zin in een biertje.";
+	zinArray[270]="Hij herinnert zich de naam van dat meisje niet.";
+	zinArray[271]="Hij houdt alles voor zich.";
+	zinArray[272]="Hij is een beetje dom geweest.";
+	zinArray[273]="Hij is een gevoelige jongen.";
+	zinArray[274]="Hij is geslaagd voor zijn rijexamen.";
+	zinArray[275]="Hij is heel erg boos op zijn broer.";
+	zinArray[276]="Hij is naar het eiland gezwommen.";
+	zinArray[277]="Hij is vandaag laat thuis gekomen.";
+	zinArray[278]="Hij kent het verschil niet tussen mijn en dijn.";
+	zinArray[279]="Hij ligt op de grond te tekenen.";
+	zinArray[280]="Hij lijdt aan een ernstige ziekte.";
+	zinArray[281]="Hij loopt niet in zeven sloten tegelijk.";
+	zinArray[282]="Hij loopt op zijn tenen.";
+	zinArray[283]="Hij moet hard werken om nog op tijd klaar te kunnen zijn.";
+	zinArray[284]="Hij moet het wat rustiger aan gaan doen. .";
+	zinArray[285]="Hij passeert mij met een rotvaart.";
+	zinArray[286]="Hij raadt het antwoord.";
+	zinArray[287]="Hij raadt naar het antwoord.";
+	zinArray[288]="Hij rookt wel twintig sigaretten per dag.";
+	zinArray[289]="Hij studeert aan de universiteit.";
+	zinArray[290]="Hij trekt zijn trui uit.";
+	zinArray[291]="Hij vraagt de juf om hulp.";
+	zinArray[292]="Hij wordt verdacht van diefstal.";
+	zinArray[293]="Hij zit op zijn geld.";
+	zinArray[294]="Hoe gaat het?";
+	zinArray[295]="Hoe kon dat zo gebeuren?";
+	zinArray[296]="Hoe laat is het?";
+	zinArray[297]="Hoe laat vertrekt de trein naar Amsterdam ?";
+	zinArray[298]="Hoe zag hij eruit?";
+	zinArray[299]="Hoe zat dat ook alweer ?";
+	zinArray[300]="Hoeveel kost dat?";
+	zinArray[301]="Hoeveel mensen heb je uitgenodigd?";
+	zinArray[302]="Hoeveel verdien jij per uur?";
+	zinArray[303]="Hoge bomen vangen veel wind.";
+	zinArray[304]="Iedereen kiest zelf een opleiding.";
+	zinArray[305]="Iedereen wil in augustus op vakantie.";
+	zinArray[306]="Iemand de laan uitsturen.";
+	zinArray[307]="Iemand die naar het bos liep was later verdwaald.";
+	zinArray[308]="Iemand die veel geld heeft is rijk.";
+	zinArray[309]="Iemand voor het karretje spannen.";
+	zinArray[310]="Ik begrijp het formulier niet helemaal.";
+	zinArray[311]="Ik begrijp het niet.";
+	zinArray[312]="Ik beloof je morgen te bellen.";
+	zinArray[313]="Ik ben aan een kopje koffie toe.";
+	zinArray[314]="Ik ben aan het schrijven.";
+	zinArray[315]="Ik ben bezig met een examen.";
+	zinArray[316]="Ik ben bezig met het plafond van mijn huis te verven.";
+	zinArray[317]="Ik ben bezig met het schilderen van mijn huis.";
+	zinArray[318]="Ik ben bezig met schrijven.";
+	zinArray[319]="Ik ben blij dat het erop zit.";
+	zinArray[320]="Ik ben de hele dag aan jou aan het denken.";
+	zinArray[321]="Ik ben de hele dag bezig met aan je te denken.";
+	zinArray[322]="Ik ben een examen aan het maken.";
+	zinArray[323]="Ik ben eindelijk achter de waarheid gekomen.";
+	zinArray[324]="Ik ben er niet in geïnteresseerd.";
+	zinArray[325]="Ik ben erg op hem gesteld.";
+	zinArray[326]="Ik ben erg sportief aangelegd.";
+	zinArray[327]="Ik ben goed in dictee en rekenen.";
+	zinArray[328]="Ik ben het plafond van mijn huis aan het verven.";
+	zinArray[329]="Ik ben iemand die snel kan beslissen.";
+	zinArray[330]="Ik ben in het bezit van een nieuwe fiets.";
+	zinArray[331]="Ik ben in Marokko geboren, maar ik woon er niet meer.";
+	zinArray[332]="Ik ben klaar met mijn werk.";
+	zinArray[333]="Ik ben mijn portemonnee verloren.";
+	zinArray[334]="Ik ben mijn stem kwijt.";
+	zinArray[335]="Ik ben na de les naar huis gegaan.";
+	zinArray[336]="Ik ben niet tevreden met dit cijfer.";
+	zinArray[337]="Ik ben niet van plan om te stoppen met leren.";
+	zinArray[338]="Ik ben trots op mijn zoon.";
+	zinArray[339]="Ik ben vanavond laat thuis, ik moet overwerken.";
+	zinArray[340]="Ik ben vandaag naar het park gelopen.";
+	zinArray[341]="Ik ben voor mijn examen geslaagd.";
+	zinArray[342]="Ik ben zeker van mijn zaak.";
+	zinArray[343]="Ik bestel een spijkerbroek uit de catalogus.";
+	zinArray[344]="Ik breng mijn fiets naar de fietsenmaker.";
+	zinArray[345]="Ik denk dat het bijna twaalf uur is.";
+	zinArray[346]="Ik denk dat we naar rechts kunnen.";
+	zinArray[347]="Ik denk niet dat we nog op tijd komen.";
+	zinArray[348]="Ik doe de afwas nadat we gegeten hebben.";
+	zinArray[349]="Ik doe er wel een papiertje om.";
+	zinArray[350]="Ik doe het voor de grap.";
+	zinArray[351]="Ik draag niet graag een zware tas.";
+	zinArray[352]="Ik durf niet in het water te duiken.";
+	zinArray[353]="Ik fiets elke dag ongeveer een uur.";
+	zinArray[354]="Ik ga altijd door de week een keer zwemmen.";
+	zinArray[355]="Ik ga even bloemen kopen.";
+	zinArray[356]="Ik ga lopend naar de bakker .";
+	zinArray[357]="Ik ga lopend naar mijn werk.";
+	zinArray[358]="Ik ga morgen met mijn vader naar Amsterdam.";
+	zinArray[359]="Ik ga na de les naar huis.";
+	zinArray[360]="Ik ga naar Nederland.";
+	zinArray[361]="Ik ga nog even mijn tanden poetsen.";
+	zinArray[362]="Ik ga straks naar school.";
+	zinArray[363]="Ik gedraag mij niet goed als ik dronken ben.";
+	zinArray[364]="Ik geef dit boek aan jou.";
+	zinArray[365]="Ik had gisteren mijn boek vergeten.";
+	zinArray[366]="Ik had hem dat advies nooit moeten geven. Ik had in Lima gewoond.";
+	zinArray[367]="Ik had niet zo laat naar bed moeten gaan.";
+	zinArray[368]="Ik heb daar helemaal geen zin in.";
+	zinArray[369]="Ik heb de auto daarachter geparkeerd.";
+	zinArray[370]="Ik heb een kat gehad toen ik kind was.";
+	zinArray[371]="Ik heb een mooi weiland en vele dieren gezien.";
+	zinArray[372]="Ik heb een mooie foto van mijn vriend.";
+	zinArray[373]="Ik heb een nieuwe fiets en een oude.";
+	zinArray[374]="Ik heb een poes als huisdier.";
+	zinArray[375]="Ik heb geen kleingeld bij me.";
+	zinArray[376]="Ik heb geen tijd voor grapjes.";
+	zinArray[377]="Ik heb geen trek in limonade.";
+	zinArray[378]="Ik heb gehoord dat het volgende week mooi weer wordt.";
+	zinArray[379]="Ik heb genoeg van school.";
+	zinArray[380]="Ik heb haar eergisteren nog gezien.";
+	zinArray[381]="Ik heb in Lima gewoond.";
+	zinArray[382]="Ik heb mij door vrienden laten verleiden tot gokken.";
+	zinArray[383]="Ik heb mijn bloemen uit de tuin verkocht.";
+	zinArray[384]="Ik heb niets bijzonders bij me.";
+	zinArray[385]="Ik heb nooit geld bij me.";
+	zinArray[386]="Ik heb nu echt geen tijd voor je.";
+	zinArray[387]="Ik heb om kwart over elf een afspraak met meneer Jansen.";
+	zinArray[388]="Ik heb straks een afspraak.";
+	zinArray[389]="Ik heb trek in een loempia.";
+	zinArray[390]="Ik heb twee koffers.";
+	zinArray[391]="Ik heb vandaag in het park gelopen.";
+	zinArray[392]="Ik heb vannacht slecht geslapen.";
+	zinArray[393]="Ik hoop niet dat het straks gaat regenen.";
+	zinArray[394]="Ik hoop niet dat het zo blijft.";
+	zinArray[395]="Ik hoop op een goed cijfer.";
+	zinArray[396]="Ik hoor de wekker niet tikken.";
+	zinArray[397]="Ik hou hem in de gaten.";
+	zinArray[398]="Ik hou mijn zusje in de gaten.";
+	zinArray[399]="Ik hou mijn zusje in de gaten.";
+	zinArray[400]="Ik hou van deze muziek, ik vraag deze plaat aan.";
+	zinArray[401]="Ik hou van jou.";
+	zinArray[402]="Ik hou van spelletjes spelen op de computer.";
+	zinArray[403]="Ik kan al wat Nederlands lezen.";
+	zinArray[404]="Ik kan een beetje Nederlands schrijven.";
+	zinArray[405]="Ik kom gelukkig nooit te laat op mijn werk.";
+	zinArray[406]="Ik kom zo snel mogelijk.";
+	zinArray[407]="Ik leer Nederlands voor mijn plezier.";
+	zinArray[408]="Ik liep je de hele dag te bellen.";
+	zinArray[409]="Ik logeer bij mijn oma.";
+	zinArray[410]="Ik logeer bij mijn oma.";
+	zinArray[411]="Ik loop de hele dag aan jou te denken.";
+	zinArray[412]="Ik lust wel een wijntje.";
+	zinArray[413]="Ik maak me zorgen over haar.";
+	zinArray[414]="Ik moet een nieuwe bril.";
+	zinArray[415]="Ik moet nog even boodschappen doen. .";
+	zinArray[416]="Ik moet nog snel boodschappen doen.";
+	zinArray[417]="Ik moet nu gaan, anders kom ik te laat.";
+	zinArray[418]="Ik moet plassen.";
+	zinArray[419]="Ik moet vandaag nog veel doen.";
+	zinArray[420]="Ik neem een aspirine tegen de hoofdpijn.";
+	zinArray[421]="Ik praat liever niet tegen hem.";
+	zinArray[422]="Ik raad naar het goede antwoord.";
+	zinArray[423]="Ik reken op je hulp.";
+	zinArray[424]="Ik schaam me voor mijn vuile handen.";
+	zinArray[425]="Ik schaamde me toen ik het antwoord niet wist.";
+	zinArray[426]="Ik schaamde me zo toen ik het antwoord niet wist.";
+	zinArray[427]="Ik slaag voor mijn examen.";
+	zinArray[428]="Ik slaagde voor mijn examen.";
+	zinArray[429]="Ik spaar mijn geld op voor een brommer.";
+	zinArray[430]="Ik speel met mijn neefje in de speeltuin.";
+	zinArray[431]="Ik spreek mijn vriend elke dag.";
+	zinArray[432]="Ik sta het plafond van mijn huis te verven.";
+	zinArray[433]="Ik studeer samen met mijn vrienden in dezelfde stad.";
+	zinArray[434]="Ik trek vandaag mijn spijkerbroek aan.";
+	zinArray[435]="Ik twijfel aan de waarheid van dit verhaal.";
+	zinArray[436]="Ik verdien geld met een krantenwijk.";
+	zinArray[437]="Ik vind dit geen goed boek.";
+	zinArray[438]="Ik vind gekookte eieren lekker.";
+	zinArray[439]="Ik vind het leuk met mensen om te gaan.";
+	zinArray[440]="Ik vind dat een leuk meisje.";
+	zinArray[441]="Ik vind dat geen aardige jongen.";
+	zinArray[442]="Ik voel me al weer een stuk beter.";
+	zinArray[443]="Ik voel me niet helemaal lekker vandaag.";
+	zinArray[444]="Ik voel me vandaag niet zo lekker.";
+	zinArray[445]="Ik was de hele dag bezig met je te bellen.";
+	zinArray[446]="Ik was je de hele dag aan het bellen.";
+	zinArray[447]="Ik was vaak te laat op mijn werk.";
+	zinArray[448]="Ik weet het niet.";
+	zinArray[449]="Ik weet niet hoe dat kon gebeuren.";
+	zinArray[450]="Ik werk met vijftig man op 1 afdeling.";
+	zinArray[451]="Ik werk vijf dagen per week, acht uur per dag.";
+	zinArray[452]="Ik wil graag politieagent worden.";
+	zinArray[453]="Ik wil graag twee dozen aardbeien.";
+	zinArray[454]="Ik wil je even wat vragen.";
+	zinArray[455]="Ik wil je wens vervullen.";
+	zinArray[456]="Ik woon in het centrum van de stad.";
+	zinArray[457]="Ik woon in Lima.";
+	zinArray[458]="Ik woon naast de drogist.";
+	zinArray[459]="Ik woon samen met mijn familie in een dorp.";
+	zinArray[460]="Ik woon samen met mijn vriend.";
+	zinArray[461]="Ik woonde in Lima.";
+	zinArray[462]="Ik zal blij zijn als het eindelijk weekend is.";
+	zinArray[463]="Ik zit een examen te maken.";
+	zinArray[464]="Ik zit te schrijven.";
+	zinArray[465]="Ik zou niet meer alleen naar huis gaan als ik u was.";
+	zinArray[466]="In de herfst vallen de bladeren van de bomen.";
+	zinArray[467]="In de zomer gaan veel mensen op vakantie.";
+	zinArray[468]="In die school wordt vanmiddag een feest gegeven.";
+	zinArray[469]="In geval van nood moet je 112 bellen.";
+	zinArray[470]="In het buitenland schijnt de zon vaker dan in Nederland.";
+	zinArray[471]="In Indonesië is het altijd warm.";
+	zinArray[472]="In Indonesië verbouwen ze veel rijst.";
+	zinArray[473]="In Nederland gebruiken we elke meter land.";
+	zinArray[474]="In Turkije zwemmen de jongens in de rivier.";
+	zinArray[475]="Is dat huis te koop of te huur? .";
+	zinArray[476]="Is er vanavond nog wat op de televisie ?";
+	zinArray[477]="Is het goed als ik wat later kom ?";
+	zinArray[478]="Jan doet soms suiker door de soep.";
+	zinArray[479]="Jan haastte zich om de trein halen.";
+	zinArray[480]="Jan is liever buiten dan binnen.";
+	zinArray[481]="Jan krijgt geen genoeg van zwemmen.";
+	zinArray[482]="Jan snijdt met het mes.";
+	zinArray[483]="Jan snijdt zich met het mes.";
+	zinArray[484]="Jan staat naar de televisie te kijken.";
+	zinArray[485]="Je geeft het energiebedrijf een machtiging.";
+	zinArray[486]="Je hebt groot gelijk.";
+	zinArray[487]="Je hoeft bij deze dokter niet te wachten.";
+	zinArray[488]="Je kunt geen ijzer met handen breken.";
+	zinArray[489]="Je kunt geld storten op een rekening.";
+	zinArray[490]="Je kunt het beste automatisch betalen.";
+	zinArray[491]="Je kunt ook telefonisch een afspraak maken.";
+	zinArray[492]="Je mag hier maar 80 rijden.";
+	zinArray[493]="Je mag in de bus niet roken.";
+	zinArray[494]="Je moest die zaden niet eten.";
+	zinArray[495]="Je moet daarvoor op het postkantoor zijn.";
+	zinArray[496]="Je moet geen oude koeien uit de sloot halen.";
+	zinArray[497]="Je moet hem ’s morgens met rust laten.";
+	zinArray[498]="Je moet je niet met die jongen inlaten.";
+	zinArray[499]="Je moet niet zo uit je slof schieten.";
+	zinArray[500]="Je moet onder aan de bladzijde kijken.";
+	zinArray[501]="Je ontmoet gewoonlijk allerlei soorten mensen.";
+	zinArray[502]="Je weet wel, zo‘n kleine computer.";
+	zinArray[503]="Je zal je niet met mijn werk bemoeien.";
+	zinArray[504]="Je zoekt dan in je portemonnee klein geld.";
+	zinArray[505]="Je zou eens beter op je woorden moeten letten.";
+	zinArray[506]="Je zou het wat rustiger aan moeten doen.";
+	zinArray[507]="Je zou vandaag een jas aan moeten doen.";
+	zinArray[508]="Jij bent aan het praten.";
+	zinArray[509]="Jij bent bezig met praten.";
+	zinArray[510]="Jij gaat morgen naar de dokter.";
+	zinArray[511]="Jij hebt ook altijd wat !";
+	zinArray[512]="Jij kan dat mooi in je zak steken.";
+	zinArray[513]="Jij loopt me altijd voor de voeten.";
+	zinArray[514]="Jij moet je bord leeg eten.";
+	zinArray[515]="Jij staat te praten.";
+	zinArray[516]="Jij stond voor aap.";
+	zinArray[517]="Jullie hebben goed gewerkt.";
+	zinArray[518]="Jullie moeten je fiets nu repareren.";
+	zinArray[519]="Jullie vinden die boeken niet mooi.";
+	zinArray[520]="Ik heb een nieuwe fiets en een oude.";
+	zinArray[521]="Ik heb kou gevat.";
+	zinArray[522]="Kan dat niet wat sneller?";
+	zinArray[523]="Kan er iemand een dokter bellen ?";
+	zinArray[524]="Kan iemand misschien een dokter bellen ?";
+	zinArray[525]="Kan ik me even voorstellen ?";
+	zinArray[526]="Kan ik u straks even terugbellen, het komt nu niet uit.";
+	zinArray[527]="Kan ik voor morgen een tafel reserveren ?";
+	zinArray[528]="Kan je iets meer over jezelf vertellen ?";
+	zinArray[529]="Kan je me die schroevendraaier even aangeven.";
+	zinArray[530]="Karim kijkt graag naar de Nederlandse televisie.";
+	zinArray[531]="Karin pikt iets van mijn bord.";
+	zinArray[532]="Kees heeft een tien voor de repetitie.";
+	zinArray[533]="Kees heeft verstand van computers.";
+	zinArray[534]="Kijk naar het woord.";
+	zinArray[535]="Kijk nou toch eens uit wat je doet.";
+	zinArray[536]="Kijk uit voor de hete thee.";
+	zinArray[537]="Kleine dingen betaal je meestal contant.";
+	zinArray[538]="Koop je daar ook kleren en schoenen?";
+	zinArray[539]="Kun je me dat nog eens uitleggen ?";
+	zinArray[540]="Kunnen we er niet over praten ?";
+	zinArray[541]="Kunt u dat nog eens herhalen.";
+	zinArray[542]="Kunt u me daar wat meer over vertellen ?";
+	zinArray[543]="Kunt u mij vertellen hoe laat het is?";
+	zinArray[544]="Kunt u op een andere dag niet terugkomen ?";
+	zinArray[545]="Kunt u wat langzamer praten.";
+	zinArray[546]="Laagland betekent dat er geen bergen zijn.";
+	zinArray[547]="Lag je tot negen uur te slapen?";
+	zinArray[548]="Lange tenen hebben.";
+	zinArray[549]="Lange vingers hebben.";
+	zinArray[550]="Later als je groot bent mag jij ook.";
+	zinArray[551]="Let op je rug.";
+	zinArray[552]="Lisa heeft ruzie met haar oudere broer.";
+	zinArray[553]="Mag het iets meer zijn ?";
+	zinArray[554]="Mag ik even kijken?";
+	zinArray[555]="Mag ik me even voorstellen ?";
+	zinArray[556]="Mag ik u enkele vragen stellen?";
+	zinArray[557]="Mag ik van u de rekening ?";
+	zinArray[558]="Mag ik van u een bos tulpen ?";
+	zinArray[559]="Miriam gaat het liefst elke dag winkelen.";
+	zinArray[560]="Marianne is een meisje. Ze is twaalf jaar.";
+	zinArray[561]="Marjolijn heeft het fietsen onder de knie.";
+	zinArray[562]="Mehmet gaat naar de groenteman, hij koopt appels.";
+	zinArray[563]="Merel trekt haar sok aan.";
+	zinArray[564]="Met de hoed in de hand kom je door het hele land.";
+	zinArray[565]="Met kerstmis sneeuwde het in Nederland.";
+	zinArray[566]="Mevrouw Jansen gaat naar de tandarts.";
+	zinArray[567]="Mijn auto is in goede staat.";
+	zinArray[568]="Mijn broer doet gewoonlijk de afwas.";
+	zinArray[569]="Mijn broertje en ik gaan naar de Kermis.";
+	zinArray[570]="Mijn buurman is rond de vijftig.";
+	zinArray[571]="Mijn fiets heeft een lekke band.";
+	zinArray[572]="Mijn man en ik houden erg van paprika.";
+	zinArray[573]="Mijn man heeft heel goed gekookt.";
+	zinArray[574]="Mijn man kookt heel goed.";
+	zinArray[575]="Mijn man kookte heel goed.";
+	zinArray[576]="Mijn mobiel is stuk.";
+	zinArray[577]="Mijn moeder brengt mij elke dag naar school.";
+	zinArray[578]="Mijn moeder heeft een bloem getekend.";
+	zinArray[579]="Mijn moeder is het huis aan het schoonmaken.";
+	zinArray[580]="Mijn moeder houdt veel van bloemen.";
+	zinArray[581]="Mijn moeder is bezig met het huis schoon te maken.";
+	zinArray[582]="Mijn moeder is op leeftijd.";
+	zinArray[583]="Mijn moeder kan niet tegen schelden.";
+	zinArray[584]="Mijn moeder staat het huis schoon te maken.";
+	zinArray[585]="Mijn moeder tekende een bloem.";
+	zinArray[586]="Mijn moeder tekent een bloem.";
+	zinArray[587]="Mijn oma is 85 jaar. Ze is dus heel oud.";
+	zinArray[588]="Mijn oma is op die rode brommer gekomen.";
+	zinArray[589]="Mijn oma is op een rode brommer gekomen.";
+	zinArray[590]="Mijn oom uit Canada komt dit weekend op bezoek.";
+	zinArray[591]="Mijn opa en oma wonen bij mij in de buurt.";
+	zinArray[592]="Mijn opa en oma wonen in Turkije.";
+	zinArray[593]="Mijn ouders gaan op bezoek bij de buren.";
+	zinArray[594]="Mijn ouders hebben een nieuw huis gekocht.";
+	zinArray[595]="Mijn ouders kochten een nieuw huis.";
+	zinArray[596]="Mijn ouders kopen een nieuw huis.";
+	zinArray[597]="Mijn ouders zijn erg gelukkig met elkaar.";
+	zinArray[598]="Mijn ouders zijn met vakantie naar Marokko.";
+	zinArray[599]="Mijn schoonvader heeft met de hond gewandeld.";
+	zinArray[600]="Mijn schoonvader wandelde elke avond met de hond.";
+	zinArray[601]="Mijn schoonvader wandelt elke avond met de hond.";
+	zinArray[602]="Mijn sleutels liggen nog thuis.";
+	zinArray[603]="Mijn tante uit Amerika komt overmorgen.";
+	zinArray[604]="Mijn vader heeft gisteren mijn haar geknipt.";
+	zinArray[605]="Mijn vader is achter in de vijftig.";
+	zinArray[606]="Mijn vader werkt bij de supermarkt.";
+	zinArray[607]="Mijn vriend is gek op speelfilms.";
+	zinArray[608]="Mijn vriend wacht buiten op mij.";
+	zinArray[609]="Mijn vriendin is aan het werk.";
+	zinArray[610]="Mijn vriendin woont om de hoek.";
+	zinArray[611]="Mijn vriendin zit te werken.";
+	zinArray[612]="Mijn vriendin is bezig met werken.";
+	zinArray[613]="Mijn vrouw past op de kinderen.";
+	zinArray[614]="Mijn zoontje was in tranen.";
+	zinArray[615]="Mijn zusje huilt bijna elke dag.";
+	zinArray[616]="Mijn zusje van vier gaat naar de crèche.";
+	zinArray[617]="Mijn zusje vouwt de was op.";
+	zinArray[618]="Mijn zussen praten over ditjes en datjes.";
+	zinArray[619]="Moeder doet boodschappen, ze koopt rijst en groente.";
+	zinArray[620]="Moet je horen wat er in de krant staat.";
+	zinArray[621]="Morgen is er weer een dag.";
+	zinArray[622]="Morgen moet hij op voor het examen.";
+	zinArray[623]="Morgen neem ik een vrije dag.";
+	zinArray[624]="Na regen komt zonneschijn.";
+	zinArray[625]="Naar mijn mening wordt niet gevraagd.";
+	zinArray[626]="Naar welke school gaat uw kind na de basisschool?";
+	zinArray[627]="Naar wie waren zij aan het luisteren?";
+	zinArray[628]="Nederland en Duitsland hebben tegen elkaar gevochten.";
+	zinArray[629]="Nederland heeft de dichtste bevolking van Europa.";
+	zinArray[630]="Nee hè, daar gaan we weer.";
+	zinArray[631]="Neem je dan gelijk wat melk mee ?";
+	zinArray[632]="Neem jij de telefoon even aan ?";
+	zinArray[633]="Neem jij wat geld mee?";
+	zinArray[634]="Niet met volle mond praten.";
+	zinArray[635]="Nieuwe bezems vegen schoon.";
+	zinArray[636]="Om twaalf uur is het tijd om naar huis te gaan.";
+	zinArray[637]="Onze dochter is al 15 jaar getrouwd.";
+	zinArray[638]="Onze flat kijkt uit op de markt.";
+	zinArray[639]="Onze kinderen hebben nog 1 oma.";
+	zinArray[640]="Oorlog is het tegenovergestelde van vrede.";
+	zinArray[641]="Op de basisschool zitten kinderen tot 12 jaar.";
+	zinArray[642]="Op de fiets moet je uitkijken voor auto’s.";
+	zinArray[643]="Op de markt koopt zij altijd sinaasappels.";
+	zinArray[644]="Op donderdag heb ik pianoles.";
+	zinArray[645]="Op mijn school zitten 1200 leerlingen.";
+	zinArray[646]="Op woensdagmiddag zijn de schoolkinderen vrij.";
+	zinArray[647]="Op zaterdag gaan we altijd naar de markt.";
+	zinArray[648]="Op zondag zijn bijna alle winkels gesloten.";
+	zinArray[649]="Opa gaat naar Amsterdam, hij gaat naar het consulaat.";
+	zinArray[650]="Opschieten! Tijd is geld.";
+	zinArray[651]="Over een half uur komt er weer een vliegtuig.";
+	zinArray[652]="Over koetjes en kalfjes praten.";
+	zinArray[653]="Pas goed op je broertje.";
+	zinArray[654]="Pas op dat je niet valt.";
+	zinArray[655]="Pas op! Voorzichtig! .";
+	zinArray[656]="Peter doet 1 keer per week boodschappen.";
+	zinArray[657]="Peter speelt op school altijd in de zandbak.";
+	zinArray[658]="Peter vergeet zijn jas aan te trekken.";
+	zinArray[659]="Peter vindt een briefje van tien euro.";
+	zinArray[660]="Petra is gek op zuurkool.";
+	zinArray[661]="Resa woont op kamers.";
+	zinArray[662]="Saida zit op school, ze leert Nederlands.";
+	zinArray[663]="Sam ruimt zijn kamer op.";
+	zinArray[664]="Sander houdt niet van voetballen.";
+	zinArray[665]="Sarah is blij met haar goede rapport.";
+	zinArray[666]="Schiet op, zo kom je nog te laat op je werk.";
+	zinArray[667]="Schoonmaken doe ik niet voor mijn lol.";
+	zinArray[668]="Sinaasappels zijn erg lekker ?";
+	zinArray[669]="Snel op je tenen getrapt zijn.";
+	zinArray[670]="Sommige leerlingen wonen buiten de stad.";
+	zinArray[671]="Sommige mannen scheren zich nooit.";
+	zinArray[672]="Sommige mensen keuren dat gedrag niet goed.";
+	zinArray[673]="Soms kan je beter zwijgen dan praten.";
+	zinArray[674]="Soms was de sloot te vuil, dus konden we niet zwemmen.";
+	zinArray[675]="Sorry ik kan niet op dinsdag.";
+	zinArray[676]="Spreken is zilver en zwijgen is goud.";
+	zinArray[677]="Spruitjes vind ik niet lekker.";
+	zinArray[678]="Tante Truus komt morgen, ze is erg aardig.";
+	zinArray[679]="Tien tegen 1 dat we winnen.";
+	zinArray[680]="Toch is mijn tas soms aardig vol.";
+	zinArray[681]="Tot morgen, half 10.";
+	zinArray[682]="Tot nu toe heb je niets fout.";
+	zinArray[683]="Tot ziens!";
+	zinArray[684]="Twee is teveel.";
+	zinArray[685]="U gaat bij de volgende stoplichten linksaf.";
+	zinArray[686]="U heeft te hard gereden.";
+	zinArray[687]="U krijgt over een paar dagen bericht.";
+	zinArray[688]="U moet doorlopen tot aan het stoplicht.";
+	zinArray[689]="U moet hier wachten.";
+	zinArray[690]="Uit de rivier kon je geen water drinken.";
+	zinArray[691]="Uit het zicht, uit het hart.";
+	zinArray[692]="Uit welk land komt u?";
+	zinArray[693]="Utrecht heeft ook een dichte bevolking.";
+	zinArray[694]="Uw bankpas sturen wij via de post.";
+	zinArray[695]="Van al mijn vrienden is John de aardigste.";
+	zinArray[696]="Van harte beterschap!";
+	zinArray[697]="Vandaag heb ik anderhalve kilo paprika gekocht.";
+	zinArray[698]="Vandaag is het een mooie dag.";
+	zinArray[699]="Vandaag is het zo warm dat de mussen van het dak vallen.";
+	zinArray[700]="Veel mensen vluchten voor oorlogsgeweld.";
+	zinArray[701]="Vind je het goed als ik even je fiets leen ?";
+	zinArray[702]="Vind jij dat ook niet vervelend?";
+	zinArray[703]="Vind jij die jongens ook niet lastig ?";
+	zinArray[704]="Volgende keer beter.";
+	zinArray[705]="Volgende keer nemen we een paraplu mee.";
+	zinArray[706]="Volgende week gaan we met vakantie.";
+	zinArray[707]="Volgens mij heeft hij een oogje op je.";
+	zinArray[708]="Volgens mij is ze gescheiden.";
+	zinArray[709]="Volgens mij moeten we die kant op.";
+	zinArray[710]="Voor al die dingen kunnen we op het postkantoor terecht.";
+	zinArray[711]="Voor je vriend moet je opkomen.";
+	zinArray[712]="Voorin de school is de kamer van de directeur.";
+	zinArray[713]="Vorig jaar zijn we naar Marokko gevlogen.";
+	zinArray[714]="Waar denk je aan?";
+	zinArray[715]="Waar een wil is, is een weg.";
+	zinArray[716]="Waar heb je het in hemelsnaam over ?";
+	zinArray[717]="Waar het hart vol van is, stroomt de mond van over.";
+	zinArray[718]="Waar is dat goed voor?";
+	zinArray[719]="Waar kijk je naar?";
+	zinArray[720]="Waar koop je een kaartje voor de trein?";
+	zinArray[721]="Waar zijn we gebleven?";
+	zinArray[722]="Waarom doet u dat nou ?";
+	zinArray[723]="Waarom zeg je niets?";
+	zinArray[724]="Wanneer ben je jarig ?";
+	zinArray[725]="Wanneer hebben we vakantie?";
+	zinArray[726]="Wanneer ik zware dingen koop ga ik op de fiets.";
+	zinArray[727]="Wanneer kom je nu eens op bezoek?";
+	zinArray[728]="Wanneer ze wakker is, is de zon onder gegaan.";
+	zinArray[729]="Waren er veel mensen op de vergadering?";
+	zinArray[730]="Wat ben je aan het doen?";
+	zinArray[731]="Wat is er aan de hand?";
+	zinArray[732]="Wat is je voornaam?";
+	zinArray[733]="Wat is uw adres?";
+	zinArray[734]="Wat krijgt u ook alweer van me ?";
+	zinArray[735]="Wat voeren jullie daar uit?";
+	zinArray[736]="Wat voor mensen doen zulke dingen?";
+	zinArray[737]="Wat was het resultaat van zijn toets?";
+	zinArray[738]="Wat zou je doen als je rijk was?";
+	zinArray[739]="We beginnen steeds in onze eigen taal te praten.";
+	zinArray[740]="We gaan aan tafel.";
+	zinArray[741]="we gaan daar de volgende les mee verder.";
+	zinArray[742]="We gaan om de beurt met de auto.";
+	zinArray[743]="We gaan vandaag ons huiswerk maken.";
+	zinArray[744]="We hadden er geen erg in.";
+	zinArray[745]="We hadden gisteren niet zoveel moeten drinken.";
+	zinArray[746]="We hebben de trein gemist.";
+	zinArray[747]="We hebben geen eigen keuken en badkamer.";
+	zinArray[748]="We hebben het meel voor dit brood in de molen gemaakt.";
+	zinArray[749]="We hebben in februari een week vakantie.";
+	zinArray[750]="We hebben om 8 uur afgesproken.";
+	zinArray[751]="We kijken uit naar de vakantie.";
+	zinArray[752]="We krijgen maar weinig klachten.";
+	zinArray[753]="We moeten haast maken .";
+	zinArray[754]="We moeten het wat rustiger aan gaan doen.";
+	zinArray[755]="We moeten morgen om drie uur bij de tandarts zijn.";
+	zinArray[756]="We moeten ons voor de voetbal-training opgeven.";
+	zinArray[757]="We waren blij toen we naar huis mochten.";
+	zinArray[758]="We zien geen oplossing voor uw probleem.";
+	zinArray[759]="We zitten aan tafel.";
+	zinArray[760]="Wees toch voorzichtig!";
+	zinArray[761]="Weet u waar het stadhuis is?";
+	zinArray[762]="Welke kant gaan we op vanaf hier?";
+	zinArray[763]="Welke taart zou je willen hebben?";
+	zinArray[764]="Wie A zegt moet ook B zeggen.";
+	zinArray[765]="Wie is er aan de beurt?";
+	zinArray[766]="Wie niet waagt wie niet wint.";
+	zinArray[767]="Wij hebben een klein huis gekocht.";
+	zinArray[768]="Wij hebben een mooie tuin met bloemen.";
+	zinArray[769]="Wij hebben vanmiddag in het bos gewandeld.";
+	zinArray[770]="Wij hebben zin in een spelletje.";
+	zinArray[771]="Wij krijgen morgen een examen voor wiskunde.";
+	zinArray[772]="Wij proberen geen fouten te maken.";
+	zinArray[773]="Wij strijden voor een beter milieu.";
+	zinArray[774]="Wij vinden die man niet aardig.";
+	zinArray[775]="Wij zien het vliegtuig hoog in de lucht .";
+	zinArray[776]="Wij zijn vrienden door dik en dun.";
+	zinArray[777]="Wij zitten gezellig samen te kletsen.";
+	zinArray[778]="Wijs het woord maar aan.";
+	zinArray[779]="Wil je een brief versturen?";
+	zinArray[780]="Wil je geld opnemen of een pakje versturen?";
+	zinArray[781]="Zal ik even met u meelopen ?";
+	zinArray[782]="Ze eten in Nederland veel aardappelen.";
+	zinArray[783]="Ze gaan met de hele familie naar Turkije.";
+	zinArray[784]="Ze geeft hem altijd de schuld.";
+	zinArray[785]="Ze had een erg litteken op haar gezicht.";
+	zinArray[786]="Ze had een erg litteken op haar gezicht.";
+	zinArray[787]="Ze had een erg litteken op haar gezicht.";
+	zinArray[788]="Ze heeft in haar nek een afschuwelijk litteken zitten.";
+	zinArray[789]="Ze houdt niet van grapjes.";
+	zinArray[790]="Ze maken een mooi huis van hout.";
+	zinArray[791]="Ze woont in een huis voor oude mensen.";
+	zinArray[792]="Ze zeggen dat geduld wordt beloond.";
+	zinArray[793]="Ze zoeken weer ruzie.";
+	zinArray[794]="Ze zouden een paraplu hebben moeten meenemen.";
+	zinArray[795]="Zeki gaat voetballen, hij is lid van een voetbalclub.";
+	zinArray[796]="Zet de radio eens wat zachter !";
+	zinArray[797]="Zij brandt haar vingers aan de kachel.";
+	zinArray[798]="Zij gaan de bloemetjes buiten zetten.";
+	zinArray[799]="Zij heeft de hele nacht doorgereden zonder te stoppen.";
+	zinArray[800]="Zij heeft veel invloed op haar vriendin.";
+	zinArray[801]="Zij houdt haar broertje voor de gek.";
+	zinArray[802]="Zij komt uit een grote familie.";
+	zinArray[803]="Zij kon bijna niet wachten tot de week om was.";
+	zinArray[804]="Zij kunnen heel goed zwemmen.";
+	zinArray[805]="Zij zitten met hun handen in het haar.";
+	zinArray[806]="Zij zullen hard moeten werken.";
+	zinArray[807]="Zijn er echt geen andere mogelijkheden?";
+	zinArray[808]="Zijn oom ligt op sterven.";
+	zinArray[809]="Zijn vrouw had voorkeur voor een huis buiten de stad.";
+	zinArray[810]="Zit toch niet zo te zeuren.";
+	zinArray[811]="Zorg dat je een paraplu mee neemt, het gaat vast regenen.";
+	zinArray[812]="Zou je dat wel willen?";
+	zinArray[813]="Zou jij dat even voor me willen doen?";
+	zinArray[814]="Zou u een beetje langzamer kunnen spreken?";
+	zinArray[815]="Zou u hier even willen wachten?";
+	zinArray[816]="Zou u me even willen helpen?";
+	zinArray[817]="Zulke dingen kopen we in een groot warenhuis.";
+	zinArray[818]="Zullen we samen naar de bioscoop gaan?";
+	zinArray[819]="Zullen we vanavond naar de bioscoop gaan?";
+	zinArray[820]="Zwemmen in de Noordzee is lekker fris.";
+	zinArray[821]="Onze hond waakt als de postbode komt.";
+	zinArray[822]="In de brievenbus vind ik twee brieven.";
+	zinArray[823]="Mijn oma woont in een grote stad.";
+	zinArray[824]="De bovenverdieping van ons huis is verhuurd.";
+	zinArray[825]="Ik ben leraar van beroep.";
+	zinArray[826]="Op de hoek van de straat moet ik goed uitkijken bij het oversteken.";
+	zinArray[827]="Soms lopen mensen door een rood stoplicht.";
+	zinArray[828]="Ik ben bang als het onweert.";
+	zinArray[829]="Op zondagochtend luiden de kerkklokken.";
+	zinArray[830]="Wanneer gaan we weer uit eten?";
+	zinArray[831]="Voor mijn verjaardag heb ik een mooi cadeau gekregen.";
+	zinArray[832]="In de zomer gaan veel mensen met vakantie.";
+	zinArray[833]="Op school leer ik goed Nederlands spreken.";
+	zinArray[834]="Ik vind Nederland een mooi land.";
+	zinArray[835]="De meeste mensen zijn vriendelijk tegen mij.";
+	zinArray[836]="Als ik iets niet begrijp, dan vraag ik het.";
+	zinArray[837]="Ik hou van koffie met melkpoeder.";
+	zinArray[838]="Koffie zwart is koffie zonder melk en suiker.";
+	zinArray[839]="Na het sporten drink ik veel water.";
+	zinArray[840]="Nijmegen ligt in de provincie Gelderland.";
+	zinArray[841]="Eindhoven ligt in de provincie Noord-Brabant.";
+	zinArray[842]="Vrienden van ons wonen in Duitsland.";
+	zinArray[843]="Mijn familie woont in Thailand.";
+	zinArray[844]="Van de zomer gaan mijn man en ik op vakantie naar Thailand.";
+	zinArray[845]="Afgelopen najaar zijn wij getrouwd.";
+	zinArray[846]="In het voorjaar komen veel vogeltjes in onze tuin.";
+	zinArray[847]="Wie geen tuin heeft, heeft vaak een balkon.";
+	zinArray[848]="In de zomer schijnt vaker de zon dan in de lente.";
+	zinArray[849]="In de winter kan er ook wel sneeuw vallen.";
+	zinArray[850]="In de herfst verkleuren de bladeren van de bomen en vallen ze eraf.";
+	zinArray[851]="In het voorjaar, de lente, komt er nieuw groen.";
+	zinArray[852]="In veel gezinnen heeft men een computer en een laptop.";
+	zinArray[853]="Kinderen hebben soms een eigen t.v. op de kamer.";
+	zinArray[854]="Sommige mensen zijn arm. Zij hebben niet veel geld.";
+	zinArray[855]="Als je een vast inkomen hebt, kun je bij de bank geld lenen.";
+	zinArray[856]="Ik zou graag werken in de gezondheidszorg of het onderwijs.";
+	zinArray[857]="Als je met het vliegtuig op vakantie gaat, kun je niet veel bagage meenemen.";
+	zinArray[858]="Wie met de tent op vakantie gaat, staat op een camping.";
+	zinArray[859]="In een hotel is veel personeel voor de gasten aanwezig.";
+	zinArray[860]="Wij kregen bij het inchecken een kopje koffie aangeboden. .";
+	zinArray[861]="Ik ga met de fiets naar school.";
+	zinArray[862]="Bedankt voor de bloemen uit Nederland.";
+	zinArray[863]="Kaas op brood vind ik echt lekker.";
+	zinArray[864]="'s Ochtends komt de zon in het oosten op.";
+	zinArray[865]="'s Middags gaat de zon in het westen onder.";
+	zinArray[866]="De trein komt precies op tijd.";
+	zinArray[867]="De conducteur controleert de instapkaarten.";
+	zinArray[868]="Zij hebben drie dochters.";
+	zinArray[869]="Bijna iedereen in Nederland heeft een fiets.";
+	zinArray[870]="Fietsen naar school vind ik beter dan met de bus gaan.";
+	zinArray[871]="In Nederland mag je geen afval op straat gooien.";
+	zinArray[872]="Als er een verkiezing is ga ik meestal stemmen.";
+	zinArray[873]="Nederland is een democratisch land.";
+	zinArray[874]="Als het stoplicht op rood staat, dan mag je de straat niet oversteken.";
+	zinArray[875]="Wanneer iemand overlijdt, is iedereen bedroefd.";
+	zinArray[876]="Op 30 april is het in Nederland Koninginnedag.";
+	zinArray[877]="Op Koninginnedag is er overal in de stad veel te doen.";
+	zinArray[878]="Koninginnedag is een groot feest voor de verjaardag van de koningin.";
+	zinArray[878]="Als je iets niet weet dan moet je het vragen.";
+	var 		rand_no = Math.floor((100-1)*Math.random()) + 1;
+
+	string +='<table class="ui-widget-content" border="0" rules="all" width="100%" cellpadding="12pen0"';	
+	string +="<tr>";
+	string +="<td style='width:500px'>"+ zinArray[rand_no] +"</td>";
+	string +="</tr>";
+
+	rand_no = Math.floor((200-100)*Math.random()) + 101;	
+	string +="<tr>";
+	string +="<td>"+ zinArray[rand_no] +"</td>";
+	string +="</tr>";	
+
+	rand_no = Math.floor((300-200)*Math.random()) + 201;
+
+	string +="<tr>";
+	string +="<td>"+ zinArray[rand_no] +"</td>";
+	string +="</tr>";	
+
+	rand_no = Math.floor((400-300)*Math.random()) + 301;
+
+	string +="<tr>";
+	string +="<td>"+ zinArray[rand_no] +"</td>";
+	string +="</tr>";	
+
+	rand_no = Math.floor((500-400)*Math.random()) + 401;
+
+	string +="<tr>";
+	string +="<td>"+ zinArray[rand_no] +"</td>";
+	string +="</tr>";	
+
+	rand_no = Math.floor((600-500)*Math.random()) + 501;
+
+	string +="<tr>";
+	string +="<td>"+ zinArray[rand_no] +"</td>";
+	string +="</tr>";	
+
+	rand_no = Math.floor((700-600)*Math.random()) + 601;
+
+	string +="<tr>";
+	string +="<td>"+ zinArray[rand_no] +"</td>";
+	string +="</tr>";	
+
+	rand_no = Math.floor((878-700)*Math.random()) + 701;
+
+	string +="<tr>";
+	string +="<td>"+ zinArray[rand_no] +"</td>";
+	string +="</tr>";	
+
+	string +="</table>";
+	
+	document.getElementById('text').innerHTML = string;
+
+	}
+  </script>
+</head>
+
+<body>
+  <div id="center" class="ui-layout-center"> 
+  <h3> Zinnen oplezen 
+
+   <img src="css/ui-lightness/images/question_mark_ui_lightness.gif" id="Titel" alt="?" title="Je vindt hier een pagina die een aantal rijen met zinnen laat zien. Je leest deze dan hardop voor. <br/>Ben je klaar met de oefening, dan kun je op de knop 'Nieuwe oefening' drukken, of de pagina vernieuwen, om een nieuwe toets te krijgen. <br/>
+Het is goed als iemand je begeleidt met deze oefeningen, omdat je hier geen geluidsfragmenten hebt, <br/>om te horen of je iets goed hebt uitgesproken. Let goed op de ui'- en 'uu'-klanken.
+<br/><br/>Offline
+<br/><br/>
+Het is mogelijk een aantal oefeningen van deze pagina te kopiëren naar een schrijfprogramma zoals Microsoft Word, <br/>en dit document te gebruiken om samen te oefenen. <br/>
+De zinnen die je ziet zijn samengesteld uit het onderdeel 'Zinnen herhalen' plus nog een aantal extra zinnen, <br/>die door mensen zijn aangeboden om mee te helpen.  </br>Veel succes!" />
+   </h3>   
+   <div id="text">
+   ho
+   </div>
+   <script  type="text/javascript">
+	loadText();
+   </script>
+ <input type='submit' onclick="loadText()" value="Nieuwe oefening"/>  
+  <!-- eind-div center-->      
+  </div>
+  <div id="north"  class="ui-layout-north" ><a href="http://www.studeersite.nl"> <img  src="css/images/professor.png" class="image-header" alt="professorhat" />  </a><h1>Studeersite.nl</h1><h4>Oefeningen in de Nederlandse taal</h4></div>
+  <div id="east"   class="ui-layout-east">  <script type="text/javascript"><!--
+google_ad_client = "ca-pub-0997941121705728";
+/* Rechts */
+google_ad_slot = "9252001755";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> </div>
+  <div id="south"  class="ui-layout-south">
+  <p style="text-align:center;font-size:8pt;">Deel deze website: <a title="Add to Facebook" href="http://www.facebook.com/sharer.php?u=http://www.studeersite.nl" rel="nofollow" target="_blank">Facebook</a> | <a title="Add to Digg" href="http://digg.com/submit?phase=2&amp;url=http%3A%2F%2Fwww.studeersite.nl&amp;title=Deel%20deze%20website" rel="nofollow" target="_blank">Digg</a> | <a title="Add to Del.icio.us" href="http://del.icio.us/post?url=http%3A%2F%2Fwww.studeersite.nl&amp;title=Deel%20deze%20website" rel="nofollow" target="_blank">Del.icio.us</a> | <a title="Add to Stumbleupon" href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.studeersite.nl&amp;title=Deel%20deze%20website" rel="nofollow" target="_blank">Stumbleupon</a> | <a title="Add to Reddit" href="http://reddit.com/submit?url=http%3A%2F%2Fwww.studeersite.nl&amp;title=Deel%20deze%20website" rel="nofollow" target="_blank">Reddit</a> | <a title="Add to Blinklist" href="http://www.blinklist.com/index.php?Action=Blink/addblink.php&amp;Description=&amp;Url=http%3A%2F%2Fwww.studeersite.nl&amp;Title=Deel%20deze%20website" rel="nofollow" target="_blank">Blinklist</a> | <a title="Add to Twitter" href="http://twitter.com/home/?status=Deel%20deze%20website+%40+http%3A%2F%2Fwww.studeersite.nl" rel="nofollow" target="_blank">Twitter</a> | <a title="Add to Technorati" href="http://www.technorati.com/faves?add=http://www.studeersite.nl" rel="nofollow" target="_blank">Technorati</a> | <a title="Add to Yahoo Buzz" href="http://buzz.yahoo.com/buzz?targetUrl=http%3A%2F%2Fwww.studeersite.nl&amp;headline=Deel%20deze%20website" rel="nofollow" target="_blank">Yahoo Buzz</a> | <a title="Add to Newsvine" href="http://www.newsvine.com/_wine/save?u=http%3A%2F%2Fwww.studeersite.nl&amp;h=Deel%20deze%20website" rel="nofollow" target="_blank">Newsvine</a></p></div>
+  <div  id="west"  class="ui-layout-west">
+
+  </div>
+</body>
+</html>

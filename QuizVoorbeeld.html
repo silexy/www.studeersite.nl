@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<script src="/js/mootools-core-1.4.5-minified.js"></script>
+<script src="/js/dg-quiz-maker.js"></script>
+<body>
+<div id="vragen">--</div>
+<script>
+function showScore() {
+	var score = quizMaker.getScore();
+
+	var el = new Element('div');
+	el.set('html', '<b>Thank you for participating!</b><br>');
+	$('result').adopt(el);
+
+	var el = new Element('div');
+	el.set('html', '<b>Score: ' + score.numCorrectAnswers + ' of ' + score.numQuestions + '</b><br>');
+	$('result').adopt(el);
+
+	if(score.incorrectAnswers.length > 0) {
+		var el = new Element('div');
+		el.set('html', '<b>Incorrect answers:</b>');
+		$('result').adopt(el);
+
+		for(var i=0;i<score.incorrectAnswers.length;i++) {
+			var incorrectAnswer = score.incorrectAnswers[i];
+			var el = new Element('div');
+			el.set('html', '<b>' +  incorrectAnswer.questionNumber + ': ' + incorrectAnswer.label + '</b>');
+			$('result').adopt(el);
+
+			var el = new Element('div');
+			el.set('html', 'Correct answer : ' + incorrectAnswer.correctAnswer);
+			$('result').adopt(el);
+			var el = new Element('div');
+			el.set('html', 'Your answer : ' + incorrectAnswer.userAnswer);
+			$('result').adopt(el);
+
+		}
+	}
+
+}
+
+function showAnswerAlert() {
+	$('error').set('html', 'You have to answer before you continue to the next question');
+}
+function clearErrorBox() {
+	$('error').set('html','');
+}
+
+var questions = [
+	{
+		label : 'What is the capital of Norway ?',
+		options : ['Stockholm', 'Oslo', 'Copenhagen'],
+		answer : ['Oslo']
+    },
+	{
+		label : 'Who was the champion of this years soccer world cup in South Africa ?',
+		options : ['Brazil', 'Netherlands', 'Spain'],
+		answer : ['Spain']
+    },
+	{
+		label : 'Who was the prime minister(s) of England during World War II ?',
+		options : ['Clement Attlee', 'Sir Winston Churchill', 'Neville Chamberlain', 'Sir Anthony Eden'],
+		answer : [1,2] // refers to the second and third option
+    }
+    ,
+	{
+		label : 'United States has how many states',
+		options : ['49','50','51'],
+		answer : ['50']
+    },
+	{
+		label : 'A crocodile is a member of which family ?',
+		options : ['amphibian','reptile', 'vermin'],
+		answer : ['reptile']
+    },
+    {
+        label: 'In which year did Atlanta(US) arrange the summer olympics ?',
+        options : ['1992','1996','2000'],
+        answer :['1996']
+    }
+
+]
+
+var quizMaker = new DG.QuizMaker({
+	questions : questions,
+	el : 'vragen',
+	listeners : {
+		'finish' : showScore,
+		'missinganswer' : showAnswerAlert,
+		'sendanswer' : clearErrorBox
+	}
+});
+quizMaker.start();
+</script>
+
+
+</body>

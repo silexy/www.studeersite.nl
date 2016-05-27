@@ -1,0 +1,8 @@
+# robots.txt 
+User-agent: *
+Disallow: 
+Disallow: /css/
+Disallow: /tekst/
+Disallow: /sound/
+Disallow: /js/
+Sitemap: http://www.studeersite.nl/sitemap.xml
